@@ -14,6 +14,13 @@
     p { color: #d0d0d0; }
     iframe { width: 100%; height: 720px; border: none; border-radius: 8px; background: #14161b; }
     nav a { color: #6fa0ff; margin-right: 16px; }
+    .tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 16px 0 24px; }
+    .tip { background: #14161b; border: 1px solid #3a3d45; border-radius: 10px; padding: 16px 20px; }
+    .tip h3 { margin: 0 0 8px; font-size: 17px; }
+    .tip ul { margin: 0; padding-left: 20px; color: #d0d0d0; line-height: 1.5; }
+    .tip a { color: #6fa0ff; }
+    kbd { background: #2a2d34; border: 1px solid #4a4f59; border-radius: 4px; padding: 1px 6px; font-size: 13px; color: #fff; }
+    code { color: #e8c24f; }
   </style>
 </head>
 <body>
@@ -50,9 +57,52 @@
   <iframe src="PRIMM-EMBED-LINK"></iframe>
 
   <h2 id="parsons">Parsons Problem</h2>
-  <span class="tier">Technique</span>
-  <p>Order the robot's drawing code so the face lands on top.</p>
-  <iframe height=600 width=800 style="border: none" src="https://app.pickcode.io/lesson/visible-java-parsons-pumpkin-copy-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-11-05-31-07?embed=true"></iframe>
+<span class="tier">Technique</span>
+<p>Put 14 scrambled lines in order to draw the pumpkin.</p>
+
+<div class="tips">
+  <div class="tip">
+    <h3>How to solve it</h3>
+    <ul>
+      <li><strong>Background first.</strong> <code>background()</code> paints over everything drawn before it.</li>
+      <li><strong>Back to front.</strong> Shapes drawn later land on top, so draw what's behind first.</li>
+      <li><strong>Colors carry forward.</strong> <code>fill()</code>, <code>stroke()</code> and <code>noStroke()</code> apply to every shape after them, until changed.</li>
+      <li><strong>Read the numbers.</strong> Match each shape's x and y to where it sits in the target picture.</li>
+      <li><strong>Run often.</strong> Move one line, run, compare.</li>
+    </ul>
+  </div>
+  <div class="tip">
+    <h3>Editor shortcuts</h3>
+    <ul>
+      <li><strong>Comment a line out or back in:</strong> <kbd>Ctrl</kbd> + <kbd>/</kbd> (Windows) or <kbd>Cmd</kbd> + <kbd>/</kbd> (Mac). If that doesn't work, type <code>#</code> at the start of the line.</li>
+      <li><strong>Build it up:</strong> comment out every line, then bring them back one at a time.</li>
+      <li><strong>Experiment:</strong> change a number to see what it controls.</li>
+      <li><strong>Undo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd>. <strong>Redo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd>.</li>
+    </ul>
+  </div>
+  <div class="tip">
+    <h3>Reference</h3>
+    <ul>
+      <li><a href="https://processing.org/reference/ellipse_.html" target="_blank">ellipse()</a></li>
+      <li><a href="https://processing.org/reference/rect_.html" target="_blank">rect()</a></li>
+      <li><a href="https://processing.org/reference/fill_.html" target="_blank">fill()</a></li>
+      <li><a href="https://processing.org/reference/stroke_.html" target="_blank">stroke()</a></li>
+      <li><a href="https://processing.org/reference/background_.html" target="_blank">background()</a></li>
+    </ul>
+  </div>
+  <div class="tip">
+    <h3>Using Parsons problems in class</h3>
+    <ul>
+      <li>Give each problem <strong>one correct order</strong>.</li>
+      <li>Use <strong>real code</strong>, and say what the finished program should do.</li>
+      <li>Repeat the concept across <strong>several similar problems</strong>.</li>
+      <li>Add <strong>distractor lines</strong> only for confident students.</li>
+      <li><a href="https://static.raspberrypi.org/files/curriculum/quickreads/13-Pedagogy_Summary_Improving_Reading_V3c_2023.pdf" target="_blank">Raspberry Pi Foundation: Improving program comprehension through Parsons Problems (PDF)</a></li>
+    </ul>
+  </div>
+</div>
+
+<iframe src="https://app.pickcode.io/lesson/parson-s-pumpkin-copy-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-11-12-53-26?embed=true"></iframe>
 </main>
 </body>
 </html>
