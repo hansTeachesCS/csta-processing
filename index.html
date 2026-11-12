@@ -14,6 +14,8 @@
     p { color: #d0d0d0; }
     iframe { width: 100%; height: 720px; border: none; border-radius: 8px; background: #14161b; }
     nav a { color: #6fa0ff; margin-right: 16px; }
+
+    /* Tip cards (Parsons) */
     .tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 16px 0 24px; }
     .tip { background: #14161b; border: 1px solid #3a3d45; border-radius: 10px; padding: 16px 20px; }
     .tip h3 { margin: 0 0 8px; font-size: 17px; }
@@ -21,6 +23,20 @@
     .tip a { color: #6fa0ff; }
     kbd { background: #2a2d34; border: 1px solid #4a4f59; border-radius: 4px; padding: 1px 6px; font-size: 13px; color: #fff; }
     code { color: #e8c24f; }
+
+    /* PRIMM stage cards */
+    .primm { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 16px 0; }
+    .stage { background: #14161b; border: 1px solid #3a3d45; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+    .stage .letter { font-size: 40px; font-weight: 700; line-height: 1; color: #6fa0ff; }
+    .stage h3 { margin: 0; font-size: 17px; }
+    .stage p { margin: 0; font-size: 15px; line-height: 1.45; color: #d0d0d0; }
+
+    /* Wide classroom card */
+    .wide { background: #14161b; border: 1px solid #3a3d45; border-radius: 10px; padding: 16px 20px; margin: 0 0 24px; }
+    .wide h3 { margin: 0 0 10px; font-size: 17px; }
+    .wide .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .wide .row div { color: #d0d0d0; font-size: 15px; line-height: 1.45; }
+    .wide .row b { color: #fff; display: block; margin-bottom: 2px; }
   </style>
 </head>
 <body>
@@ -35,6 +51,8 @@
     <a href="#primm">PRIMM</a>
     <a href="#parsons">Parsons</a>
   </nav>
+
+  <!-- ===== PROJECTS ===== -->
 
   <h2 id="robot">Robot Drawing</h2>
   <span class="tier">Mild</span>
@@ -51,57 +69,89 @@
   <p>Build objects in an array to animate a confetti burst.</p>
   <iframe src="CONFETTI-EMBED-LINK"></iframe>
 
-  <h2 id="primm">PRIMM</h2>
+  <!-- ===== PRIMM ===== -->
+
+  <h2 id="primm">PRIMM: Traffic Light</h2>
   <span class="tier">Technique</span>
-  <p>Predict what the sketch will draw before you run it. Then change it and make your own.</p>
-  <iframe src="PRIMM-EMBED-LINK"></iframe>
+  <p>A traffic light that almost works. Read it, run it, figure it out, then make the car obey it.</p>
+
+  <div class="primm">
+    <div class="stage"><span class="letter">P</span><h3>Predict</h3>
+      <p>Read the code without running it. What will you see? What happens when you click each light?</p></div>
+    <div class="stage"><span class="letter">R</span><h3>Run</h3>
+      <p>Run it and click all three lights. Which predictions were right? What surprised you?</p></div>
+    <div class="stage"><span class="letter">I</span><h3>Investigate</h3>
+      <p>Which method decides if a click hits the red light? What do <code>510</code>, <code>55</code> and <code>25</code> mean? Why can't you get back to green?</p></div>
+    <div class="stage"><span class="letter">M</span><h3>Modify</h3>
+      <p>Make the yellow and green lights clickable too. Hint: what changes between the three lights?</p></div>
+    <div class="stage"><span class="letter">M</span><h3>Make</h3>
+      <p>Make the car drive on green, slow down on yellow and stop on red. Bonus: wrap it around the screen.</p></div>
+  </div>
+
+  <div class="wide">
+    <h3>How this works in the classroom</h3>
+    <div class="row">
+      <div><b>Keep Predict low-stakes</b>Don't grade predictions. A wrong guess is useful, so everyone feels free to commit to one.</div>
+      <div><b>Start from working code</b>Students run code you provide instead of a blank editor, which lowers anxiety and avoids confusing errors.</div>
+      <div><b>Talk in pairs</b>Predict and Investigate work best in pairs or small groups, away from the keyboard, so students build shared vocabulary.</div>
+      <div><b>Vary the Investigate</b>Trace, annotate, explain and debug. Ask questions pitched just beyond what students can do alone.</div>
+      <div><b>Modify in small steps</b>Increase difficulty gradually, so the code shifts from someone else's to partly theirs.</div>
+      <div><b>Make something new</b>Use the same structures to solve a different problem. Not every lesson needs all five stages.</div>
+    </div>
+    <p style="margin: 14px 0 0; font-size: 15px;"><a href="https://static.raspberrypi.org/files/curriculum/quickreads/11-Pedagogy_Summary_PRIMM_V4_2023.pdf" target="_blank" style="color: #6fa0ff;">Raspberry Pi Foundation: Using PRIMM to structure programming lessons (PDF)</a></p>
+  </div>
+
+  <iframe src="https://app.pickcode.io/lesson/primm-traffic-csta-ny-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-12-02-17-36?embed=true"></iframe>
+
+  <!-- ===== PARSONS ===== -->
 
   <h2 id="parsons">Parsons Problem</h2>
-<span class="tier">Technique</span>
-<p>Put 14 scrambled lines in order to draw the pumpkin.</p>
+  <span class="tier">Technique</span>
+  <p>Put 14 scrambled lines in order to draw the pumpkin.</p>
 
-<div class="tips">
-  <div class="tip">
-    <h3>How to solve it</h3>
-    <ul>
-      <li><strong>Background first.</strong> <code>background()</code> paints over everything drawn before it.</li>
-      <li><strong>Back to front.</strong> Shapes drawn later land on top, so draw what's behind first.</li>
-      <li><strong>Colors carry forward.</strong> <code>fill()</code>, <code>stroke()</code> and <code>noStroke()</code> apply to every shape after them, until changed.</li>
-      <li><strong>Read the numbers.</strong> Match each shape's x and y to where it sits in the target picture.</li>
-      <li><strong>Run often.</strong> Move one line, run, compare.</li>
-    </ul>
+  <div class="tips">
+    <div class="tip">
+      <h3>How to solve it</h3>
+      <ul>
+        <li><strong>Background first.</strong> <code>background()</code> paints over everything drawn before it.</li>
+        <li><strong>Back to front.</strong> Shapes drawn later land on top, so draw what's behind first.</li>
+        <li><strong>Colors carry forward.</strong> <code>fill()</code>, <code>stroke()</code> and <code>noStroke()</code> apply to every shape after them, until changed.</li>
+        <li><strong>Read the numbers.</strong> Match each shape's x and y to where it sits in the target picture.</li>
+        <li><strong>Run often.</strong> Move one line, run, compare.</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <h3>Editor shortcuts</h3>
+      <ul>
+        <li><strong>Comment a line out or back in:</strong> <kbd>Ctrl</kbd> + <kbd>/</kbd> (Windows) or <kbd>Cmd</kbd> + <kbd>/</kbd> (Mac). If that doesn't work, type <code>//</code> at the start of the line.</li>
+        <li><strong>Build it up:</strong> comment out every line, then bring them back one at a time.</li>
+        <li><strong>Experiment:</strong> change a number to see what it controls.</li>
+        <li><strong>Undo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd>. <strong>Redo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd>.</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <h3>Reference</h3>
+      <ul>
+        <li><a href="https://processing.org/reference/ellipse_.html" target="_blank">ellipse()</a></li>
+        <li><a href="https://processing.org/reference/rect_.html" target="_blank">rect()</a></li>
+        <li><a href="https://processing.org/reference/fill_.html" target="_blank">fill()</a></li>
+        <li><a href="https://processing.org/reference/stroke_.html" target="_blank">stroke()</a></li>
+        <li><a href="https://processing.org/reference/background_.html" target="_blank">background()</a></li>
+      </ul>
+    </div>
+    <div class="tip">
+      <h3>Using Parsons problems in class</h3>
+      <ul>
+        <li>Give each problem <strong>one correct order</strong>.</li>
+        <li>Use <strong>real code</strong>, and say what the finished program should do.</li>
+        <li>Repeat the concept across <strong>several similar problems</strong>.</li>
+        <li>Add <strong>distractor lines</strong> only for confident students.</li>
+        <li><a href="https://static.raspberrypi.org/files/curriculum/quickreads/13-Pedagogy_Summary_Improving_Reading_V3c_2023.pdf" target="_blank">Raspberry Pi Foundation: Improving program comprehension through Parsons Problems (PDF)</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="tip">
-    <h3>Editor shortcuts</h3>
-    <ul>
-      <li><strong>Comment a line out or back in:</strong> <kbd>Ctrl</kbd> + <kbd>/</kbd> (Windows) or <kbd>Cmd</kbd> + <kbd>/</kbd> (Mac). If that doesn't work, type <code>#</code> at the start of the line.</li>
-      <li><strong>Build it up:</strong> comment out every line, then bring them back one at a time.</li>
-      <li><strong>Experiment:</strong> change a number to see what it controls.</li>
-      <li><strong>Undo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd>. <strong>Redo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd>.</li>
-    </ul>
-  </div>
-  <div class="tip">
-    <h3>Reference</h3>
-    <ul>
-      <li><a href="https://processing.org/reference/ellipse_.html" target="_blank">ellipse()</a></li>
-      <li><a href="https://processing.org/reference/rect_.html" target="_blank">rect()</a></li>
-      <li><a href="https://processing.org/reference/fill_.html" target="_blank">fill()</a></li>
-      <li><a href="https://processing.org/reference/stroke_.html" target="_blank">stroke()</a></li>
-      <li><a href="https://processing.org/reference/background_.html" target="_blank">background()</a></li>
-    </ul>
-  </div>
-  <div class="tip">
-    <h3>Using Parsons problems in class</h3>
-    <ul>
-      <li>Give each problem <strong>one correct order</strong>.</li>
-      <li>Use <strong>real code</strong>, and say what the finished program should do.</li>
-      <li>Repeat the concept across <strong>several similar problems</strong>.</li>
-      <li>Add <strong>distractor lines</strong> only for confident students.</li>
-      <li><a href="https://static.raspberrypi.org/files/curriculum/quickreads/13-Pedagogy_Summary_Improving_Reading_V3c_2023.pdf" target="_blank">Raspberry Pi Foundation: Improving program comprehension through Parsons Problems (PDF)</a></li>
-    </ul>
-  </div>
-</div>
 
-<iframe height=600 width=800 style="border: none" src="https://app.pickcode.io/lesson/visible-java-parsons-pumpkin-copy-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-11-10-30-00?embed=true"></iframe>
+  <iframe src="https://app.pickcode.io/lesson/visible-java-parsons-pumpkin-copy-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-11-10-30-00?embed=true"></iframe>
+</main>
 </body>
 </html>
