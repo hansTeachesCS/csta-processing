@@ -59,10 +59,48 @@
   <p>Call functions and change variables to customize a robot.</p>
   <iframe src="ROBOT-EMBED-LINK"></iframe>
 
-  <h2 id="functions">Functions Library</h2>
+  <h2 id="functions">Functions Library: Fall Stamps</h2>
   <span class="tier">Medium</span>
   <p>Use (and maybe write) drawing methods to compose a picture.</p>
-  <iframe src="FUNCTIONS-EMBED-LINK"></iframe>
+
+  <div class="tips">
+    <div class="tip">
+      <h3>1. Explore</h3>
+      <ul>
+        <li>Run it, then press a key to stamp at your mouse.</li>
+        <li><kbd>P</kbd> pumpkin, <kbd>H</kbd> haystack, <kbd>T</kbd> bare tree, <kbd>L</kbd> leaf.</li>
+        <li>Stamp a few leaves. Why does each one land at a different angle?</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <h3>2. Compose</h3>
+      <ul>
+        <li>Build a scene by calling stamps in <code>setup()</code>.</li>
+        <li>Uncomment the examples to start: <code>pumpkin(500, 320, 0.8);</code></li>
+        <li>Change the third number to resize: <code>1.0</code> is normal, <code>0.5</code> is half.</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <h3>3. Create</h3>
+      <ul>
+        <li>Copy a stamp method and draw something new: an apple, a scarecrow, a fence.</li>
+        <li>Draw around <code>(0, 0)</code>. <code>translate()</code> moves it into place.</li>
+        <li>Call it in <code>setup()</code>, or give it a key in <code>keyPressed()</code>.</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <h3>Reference</h3>
+      <ul>
+        <li><a href="https://processing.org/reference/translate_.html" target="_blank">translate()</a></li>
+        <li><a href="https://processing.org/reference/scale_.html" target="_blank">scale()</a></li>
+        <li><a href="https://processing.org/reference/rotate_.html" target="_blank">rotate()</a></li>
+        <li><a href="https://processing.org/reference/pushMatrix_.html" target="_blank">pushMatrix()</a> and <a href="https://processing.org/reference/popMatrix_.html" target="_blank">popMatrix()</a></li>
+        <li><a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <iframe src="https://app.pickcode.io/lesson/function-library-csta-ny-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-12-10-48-52?embed=true"></iframe>
 
   <h2 id="confetti">Confetti</h2>
   <span class="tier">Challenging</span>
@@ -101,7 +139,7 @@
     <p style="margin: 14px 0 0; font-size: 15px;"><a href="https://static.raspberrypi.org/files/curriculum/quickreads/11-Pedagogy_Summary_PRIMM_V4_2023.pdf" target="_blank" style="color: #6fa0ff;">Raspberry Pi Foundation: Using PRIMM to structure programming lessons (PDF)</a></p>
   </div>
 
-  <iframe height=600 width=800 style="border: none" src="https://app.pickcode.io/lesson/primm-traffic-csta-ny-copy-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-12-02-34-56?embed=true"></iframe>
+  <iframe src="https://app.pickcode.io/lesson/primm-traffic-csta-ny-lesson-cm0soly2ngz5hxocjuzp1rtqz-2026-11-12-02-17-36?embed=true"></iframe>
 
   <!-- ===== PARSONS ===== -->
 
@@ -124,6 +162,7 @@
       <h3>Editor shortcuts</h3>
       <ul>
         <li><strong>Comment a line out or back in:</strong> <kbd>Ctrl</kbd> + <kbd>/</kbd> (Windows) or <kbd>Cmd</kbd> + <kbd>/</kbd> (Mac). If that doesn't work, type <code>//</code> at the start of the line.</li>
+        <li><strong>Move a line up or down:</strong> click the line, then <kbd>Option</kbd> + <kbd>↑</kbd>/<kbd>↓</kbd> (Mac) or <kbd>Alt</kbd> + <kbd>↑</kbd>/<kbd>↓</kbd> (Windows). No copy and paste needed.</li>
         <li><strong>Build it up:</strong> comment out every line, then bring them back one at a time.</li>
         <li><strong>Experiment:</strong> change a number to see what it controls.</li>
         <li><strong>Undo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd>. <strong>Redo:</strong> <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd>.</li>
